@@ -1,8 +1,8 @@
 import requests
 # import spotipy
 
-CLIENT_ID = "6fb423d12fc4495998745bbd73900b72"
-CLIENT_SECRET = "d4fd4f04fa4b4d9a9483a3d79d7075cf"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
 
