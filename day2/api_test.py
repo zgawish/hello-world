@@ -1,5 +1,5 @@
 import requests
-import spotipy
+# import spotipy
 
 CLIENT_ID = "6fb423d12fc4495998745bbd73900b72"
 CLIENT_SECRET = "d4fd4f04fa4b4d9a9483a3d79d7075cf"
@@ -14,11 +14,9 @@ auth_response = requests.post(AUTH_URL, {
   'client_secret': CLIENT_SECRET,
 })
 
-print(auth_response.status_code)
 
 auth_response_data = auth_response.json()
 
-print(auth_response_data)
 
 access_token = auth_response_data['access_token']
 
@@ -26,14 +24,17 @@ path = "https://api.spotify.com/v1/"
 
 # Get Cole content
 token = "Bearer {token}".format(token=access_token)
-print(token)
 header = {
   "Authorization": token
 }
 
 artist_id = "6l3HvQ5sa6mXTsMTB19rO5"
 cole_response = requests.get(path + "artists/" + artist_id, headers=header)
+cole_data = cole_response.json()
+artist = cole_data['name']
+followers = cole_data['followers']['total']
+popularity = cole_data['popularity']
+msg = "{artist} has {followers} followers on Spotify and has a popularity score of {score}".format(artist=artist, followers=followers, score=popularity)
 
 
-
-print(cole_response.json())
+print(msg)
