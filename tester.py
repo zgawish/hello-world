@@ -12,5 +12,6 @@ class TestFileName(unittest.TestCase):
         self.assertEqual(get_request("pickachu").status_code, 404)
         self.assertEqual(get_request("ditto").status_code, 200)
 
+        
 if __name__ == '__main__':
     unittest.main()
