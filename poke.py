@@ -10,8 +10,12 @@ def add_to_table(data, engine):
     dataf = pd.DataFrame(data, index=[0])
     dataf.to_sql('poke_stats', con=engine, if_exists='replace', index=False)
 
+def get_request(pokemon):
+    return requests.get('https://pokeapi.co/api/v2/pokemon/{endpoint}/'.format(endpoint=pokemon))
+    
+    
 def handle_request(pokemon):
-    response = requests.get('https://pokeapi.co/api/v2/pokemon/{endpoint}/'.format(endpoint=pokemon))
+    response = get_request(pokemon)
     if response.status_code == 200:
         print("Getting data for " + pokemon + "...")
         response_data = response.json()
