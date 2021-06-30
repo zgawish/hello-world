@@ -46,7 +46,7 @@ def main():
             return
         try:
             add_to_table(data, engine)
-        except:
+        except Exception:
             print("Engine cannot connect. Try checking database first.")
 
         pokemon = input("ENTER A POKEMON NAME: ")
