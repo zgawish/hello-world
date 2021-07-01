@@ -14,9 +14,10 @@ def add_to_table(data, engine):
 
 
 def get_request(pokemon):
-    request_string = 'https://pokeapi.co/api/v2/pokemon/{endpoint}/'.format(endpoint=pokemon)
-    return requests.get(request_string)
-    
+    api_url = 'https://pokeapi.co/api/v2/
+    request_string = 'pokemon/{endpoint}/'.format(endpoint=pokemon)
+    return requests.get(api_url + request_string)
+
     
 def handle_request(pokemon):
     response = get_request(pokemon)
