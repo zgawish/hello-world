@@ -1,5 +1,5 @@
 # hello-world
-![Style Check workflow] (https://github.com/zgawish/hello-world/actions/workflows/style_check.yml/badge.svg)
+![Style Check workflow](https://github.com/zgawish/hello-world/actions/workflows/check_style.yml/badge.svg)
 
 ### About
 ---------
