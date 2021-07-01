@@ -6,14 +6,16 @@ import os
 
 # use mysql to create schema first
 
+
 def add_to_table(data, engine):
     print("adding to table")
     dataf = pd.DataFrame(data, index=[0])
     dataf.to_sql('poke_stats', con=engine, if_exists='append', index=False)
 
-    
+
 def get_request(pokemon):
-    return requests.get('https://pokeapi.co/api/v2/pokemon/{endpoint}/'.format(endpoint=pokemon))
+    request_string = 'https://pokeapi.co/api/v2/pokemon/{endpoint}/'.format(endpoint=pokemon)
+    return requests.get(request_string)
     
     
 def handle_request(pokemon):
@@ -50,8 +52,7 @@ def main():
             add_to_table(data, engine)
         except Exception:
             print("Engine cannot connect. Try checking database first.")
-        
-        
+            
         pokemon = input("ENTER A POKEMON NAME: ")
 #     os.system("mysql -u root -pcodio poke_data > ./hello-world/poke_data.sql")
 
