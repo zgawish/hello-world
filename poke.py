@@ -62,9 +62,9 @@ def main():
             print("Engine cannot connect. Try checking database first.")
 
         pokemon = input("ENTER A POKEMON NAME: ")
-#     os.system("mysql -u root -pcodio poke_data 
+#     os.system("mysql -u root -pcodio poke_data
 #     > ./hello-world/poke_data.sql")
 
-    
+
 if __name__ == '__main__':
     main()
