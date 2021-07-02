@@ -31,11 +31,11 @@ def handle_request(pokemon):
         weight = response_data['weight']
         order = response_data['order']
         data = {
-            'id': pid, 
-            'name': n, 
-            'height': h, 
-            'base_experience': exp, 
-            'weight': weight, 
+            'id': pid,
+            'name': n,
+            'height': h,
+            'base_experience': exp,
+            'weight': weight,
             'rank': order
         }
         return data
@@ -60,9 +60,10 @@ def main():
             add_to_table(data, engine)
         except Exception:
             print("Engine cannot connect. Try checking database first.")
-            
+
         pokemon = input("ENTER A POKEMON NAME: ")
-#     os.system("mysql -u root -pcodio poke_data > ./hello-world/poke_data.sql")
+#     os.system("mysql -u root -pcodio poke_data 
+#     > ./hello-world/poke_data.sql")
 
     
 if __name__ == '__main__':
