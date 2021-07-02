@@ -18,7 +18,7 @@ def get_request(pokemon):
     request_string = 'pokemon/{endpoint}/'.format(endpoint=pokemon)
     return requests.get(api_url + request_string)
 
-    
+
 def handle_request(pokemon):
     response = get_request(pokemon)
     if response.status_code == 200:
@@ -30,12 +30,19 @@ def handle_request(pokemon):
         exp = response_data['base_experience']
         weight = response_data['weight']
         order = response_data['order']
-        data = {'id': pid, 'name': n, 'height': h, 'base_experience': exp, 'weight': weight, 'rank': order}
+        data = {
+            'id': pid, 
+            'name': n, 
+            'height': h, 
+            'base_experience': exp, 
+            'weight': weight, 
+            'rank': order
+        }
         return data
     else:
         return {}
-      
-    
+
+
 def main():
     # establish connection to db
     print("Creating engine...")
